@@ -122,6 +122,9 @@ plugin preloaded. Closing the sandbox window doesn't affect your real IDE.
 - **[Design](docs/DESIGN.md)** — architecture (with mermaid), the sidecar
   renderer protocol, PSI model, extension points, how to add a recipe or
   widget.
+- **[Releasing](docs/RELEASING.md)** — how to cut a release, what the CI
+  workflow does, version-bump dance, recovery when a Release ends up
+  without its zip attached.
 
 The user guide ships with **labelled placeholder screenshots** so it renders
 correctly out of the box. Replace them with real captures:
