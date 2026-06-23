@@ -953,3 +953,37 @@ The sidecar renderer can't load classes it doesn't know about. Two options:
 The Component Help catalog hand-curates ~30 widgets. Anything else falls
 back to a stub with the Oracle Javadoc link. To add a curated entry, edit
 `plugin/src/main/kotlin/com/visualjava/help/ComponentDocsCatalog.kt`.
+
+### Red "Unhandled exception" notification — `GradleDownloadSourceEditorListener` / `Unable to download artifact`
+
+The stack trace looks like:
+
+```
+java.lang.IllegalStateException: Unable to download artifact.
+    at org.jetbrains.plugins.gradle.service.sources.GradleLibrarySourcesDownloader.download(…)
+    at org.jetbrains.plugins.gradle.service.editor.GradleDownloadSourceEditorListener$fileOpened$1.invokeSuspend(…)
+```
+
+This is **not Visual Java**. Every frame is `org.jetbrains.plugins.gradle.*`
+/ `com.intellij.openapi.externalSystem.*` — it's IntelliJ's bundled Gradle
+integration.
+
+**Trigger:** you have a `.class` file from a Gradle dependency open in an
+editor tab (typically `FXMLLoader.class` because the designer opens it for
+introspection). On open, the listener tries to download the dependency's
+`-sources.jar` so you can navigate it. The OpenJFX artifacts on Maven
+Central (`org.openjfx:javafx-fxml:21.0.5`, etc.) don't publish a `-sources`
+classifier, so the download fails. The listener doesn't catch the failure,
+so it bubbles up as an unhandled coroutine exception.
+
+**Three ways to silence it:**
+
+1. **Close the `.class` tab** (e.g. `FXMLLoader.class`). The listener
+   only fires on `.class` file open.
+2. **Disable auto-download of sources:** Settings → Build, Execution,
+   Deployment → Build Tools → Gradle → uncheck *"Download sources
+   automatically"*.
+3. **Ignore it.** It doesn't affect plugin behaviour or your code.
+
+If it bothers you long-term, report it to JetBrains — the listener should
+catch the download failure instead of letting it bubble up.
