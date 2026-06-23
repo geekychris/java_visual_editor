@@ -6,4 +6,6 @@
   <line x1="6" y1="3.6" x2="10" y2="3.6" stroke="#6E6E6E" stroke-width="0.8"/>
   <line x1="6" y1="5.4" x2="10" y2="5.4" stroke="#6E6E6E" stroke-width="0.8"/>
   <line x1="6" y1="7.2" x2="8.5" y2="7.2" stroke="#6E6E6E" stroke-width="0.8"/>
+  <!-- Visual Java family mark: top-right corner dot. -->
+  <circle cx="11.5" cy="1.5" r="1.2" fill="#FF8800"/>
 </svg>
