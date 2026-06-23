@@ -1,0 +1,8 @@
+<svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
+  <!-- Globe: outer circle + meridian + equator. -->
+  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="#6E6E6E" stroke-width="1"/>
+  <ellipse cx="6.5" cy="6.5" rx="2" ry="5" fill="none" stroke="#6E6E6E" stroke-width="0.8"/>
+  <line x1="1.5" y1="6.5" x2="11.5" y2="6.5" stroke="#6E6E6E" stroke-width="0.8"/>
+  <path d="M2.2 4 Q6.5 5.5 10.8 4" fill="none" stroke="#6E6E6E" stroke-width="0.7"/>
+  <path d="M2.2 9 Q6.5 7.5 10.8 9" fill="none" stroke="#6E6E6E" stroke-width="0.7"/>
+</svg>

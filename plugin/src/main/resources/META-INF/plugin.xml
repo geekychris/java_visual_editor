@@ -24,29 +24,36 @@
 
         <toolWindow id="Properties"
                     anchor="right"
+                    icon="/icons/properties.svg"
                     factoryClass="com.visualjava.inspector.PropertyInspectorToolWindowFactory"/>
         <toolWindow id="Palette"
                     anchor="left"
+                    icon="/icons/palette.svg"
                     factoryClass="com.visualjava.palette.PaletteToolWindowFactory"/>
         <toolWindow id="VJ Forms"
                     anchor="left"
                     secondary="true"
+                    icon="/icons/vjforms.svg"
                     factoryClass="com.visualjava.projectview.VisualJavaProjectViewFactory"/>
         <toolWindow id="Resources"
                     anchor="right"
                     secondary="true"
+                    icon="/icons/resources.svg"
                     factoryClass="com.visualjava.resources.ResourceManagerToolWindowFactory"/>
         <toolWindow id="i18n"
                     anchor="right"
                     secondary="true"
+                    icon="/icons/i18n.svg"
                     factoryClass="com.visualjava.i18n.I18nToolWindowFactory"/>
         <toolWindow id="A11y"
                     anchor="right"
                     secondary="true"
+                    icon="/icons/a11y.svg"
                     factoryClass="com.visualjava.a11y.AccessibilityToolWindowFactory"/>
         <toolWindow id="Component Help"
                     anchor="right"
                     secondary="true"
+                    icon="/icons/help.svg"
                     factoryClass="com.visualjava.help.ComponentHelpToolWindowFactory"/>
         <!-- PreviewProcessService and DesignerSessionService are auto-registered via @Service(PROJECT). -->
     </extensions>

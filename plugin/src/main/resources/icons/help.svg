@@ -1,0 +1,10 @@
+<svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
+  <!-- Open book with a small question mark. -->
+  <path d="M1.5 3 L1.5 10 L6.5 10.5 L11.5 10 L11.5 3 L6.5 3.5 Z"
+        fill="none" stroke="#6E6E6E" stroke-width="1" stroke-linejoin="round"/>
+  <line x1="6.5" y1="3.5" x2="6.5" y2="10.5" stroke="#6E6E6E" stroke-width="1"/>
+  <!-- ? glyph on the right page. -->
+  <path d="M8.2 5.5 Q8.2 4.5 9.3 4.5 Q10.3 4.5 10.3 5.5 Q10.3 6 9.3 6.5 L9.3 7.3"
+        fill="none" stroke="#6E6E6E" stroke-width="0.9" stroke-linecap="round"/>
+  <circle cx="9.3" cy="8.4" r="0.5" fill="#6E6E6E"/>
+</svg>

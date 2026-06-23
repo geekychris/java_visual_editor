@@ -1,0 +1,8 @@
+<svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
+  <!-- Universal accessibility person (head + outstretched arms + legs). -->
+  <circle cx="6.5" cy="2.5" r="1.2" fill="#6E6E6E"/>
+  <line x1="2.5" y1="5.5" x2="10.5" y2="5.5" stroke="#6E6E6E" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="6.5" y1="4"   x2="6.5"  y2="8"   stroke="#6E6E6E" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="6.5" y1="8"   x2="4.5"  y2="11.5" stroke="#6E6E6E" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="6.5" y1="8"   x2="8.5"  y2="11.5" stroke="#6E6E6E" stroke-width="1.1" stroke-linecap="round"/>
+</svg>
