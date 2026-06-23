@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane prefHeight="320" prefWidth="500" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.HelloController">
+    <children>
+        <Label fx:id="title" layoutX="1" layoutY="33" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Visual Java — M3 demo"
+               onMouseClicked="#titleMouseClicked" prefWidth="180" prefHeight="23"/>
+
+        <Label fx:id="nameLabel" layoutX="20" layoutY="80" text="Your name:" />
+        <TextField fx:id="nameField" layoutX="191" layoutY="76" onKeyTyped="#nameFieldKeyTyped" prefWidth="240"
+                   prefHeight="25"/>
+
+        <CheckBox fx:id="agreeCheck" layoutX="20" layoutY="130" text="I agree to the terms"
+                  onAction="#agreeCheckAction"/>
+
+        <Button fx:id="submitBtn" layoutX="20" layoutY="180" onAction="#submitBtnAction" onMouseExited="#submitBtnMouseExited" onMousePressed="#submitBtnMousePressed" prefWidth="100" text="Submit" textFill="#dd7676" textOverrun="CLIP" />
+        <Button fx:id="cancelBtn" layoutX="177" layoutY="174" prefWidth="100" text="Cancel" prefHeight="32"/>
+
+        <Label fx:id="status" layoutX="20" layoutY="260" style="-fx-text-fill: #777;" text="(status messages appear here)"
+               onMouseClicked="#statusMouseClicked"/>
+      <AmbientLight color="CHARTREUSE" lightOn="true" />
+        <ProgressBar fx:id="progressBar1" layoutX="2" layoutY="277" prefWidth="200" progress="0.5" prefHeight="20"
+                     onMouseClicked="#progressBar1MouseClicked"/>
+        <HBox fx:id="hBox1" layoutX="146" layoutY="369" prefWidth="200" prefHeight="40" spacing="8">
+            <children>
+                <HBox fx:id="hBox2" layoutX="146" layoutY="370" prefWidth="200" prefHeight="40" spacing="8"
+                      onMouseClicked="#hBox2MouseClicked">
+                    <children>
+                        <Button fx:id="button1" layoutX="146" layoutY="369" text="Button" prefWidth="100"
+                                prefHeight="28"/>
+                        <Button fx:id="button2" layoutX="146" layoutY="398" text="Button" prefWidth="96"
+                                prefHeight="26"/>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+        <CheckBox fx:id="mine" layoutX="20" layoutY="323" text="This is my checkbox" onAction="#mineAction"
+                  prefWidth="134" prefHeight="20"/>
+        <TabPane fx:id="tabPane2" layoutX="281" layoutY="49" prefWidth="300" prefHeight="200"/>
+        <VBox fx:id="vBox2" layoutX="327" layoutY="150" prefWidth="167" prefHeight="101" spacing="8">
+            <children>
+                <Button fx:id="button3" layoutX="74" layoutY="32" text="Button" prefWidth="100"/>
+                <Button fx:id="button4" layoutX="327" layoutY="167" text="Button" prefWidth="100"
+                        onAction="#onButton4ChooseFile" prefHeight="27"/>
+            </children>
+        </VBox>
+        <Button fx:id="button5" layoutX="227" layoutY="469" text="Button" prefWidth="100" onAction="#button5Action"/>
+        <CheckBox fx:id="checkBox1" layoutX="181" layoutY="528" text="CheckBox"/>
+        <CheckBox fx:id="checkBox2" layoutX="423" layoutY="526" text="CheckBox" onAction="#checkBox2Action"/>
+        <HTMLEditor fx:id="hTMLEditor1" layoutX="231" layoutY="222" prefWidth="400" prefHeight="200"/>
+    </children>
+</AnchorPane>

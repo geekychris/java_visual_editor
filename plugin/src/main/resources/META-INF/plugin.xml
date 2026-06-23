@@ -1,0 +1,94 @@
+<idea-plugin>
+    <id>com.visualjava</id>
+    <name>Visual Java</name>
+    <vendor email="chris@hitorro.com">Chris</vendor>
+
+    <description><![CDATA[
+        Visual Java — a VB6-style visual UI designer for JavaFX.
+        Drag widgets onto a form, double-click to write event handlers, hit Run.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <depends>com.intellij.modules.xml</depends>
+    <depends>com.intellij.gradle</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Register .fxml as an XML file type so IntelliJ recognises it
+             even without the bundled JavaFX plugin (which is what would
+             normally register this mapping). -->
+        <fileType name="XML" extensions="fxml"/>
+
+        <fileEditorProvider implementation="com.visualjava.editor.FxmlDesignerEditorProvider"/>
+        <notificationGroup id="Visual Java" displayType="BALLOON"/>
+
+        <toolWindow id="Properties"
+                    anchor="right"
+                    factoryClass="com.visualjava.inspector.PropertyInspectorToolWindowFactory"/>
+        <toolWindow id="Palette"
+                    anchor="left"
+                    factoryClass="com.visualjava.palette.PaletteToolWindowFactory"/>
+        <toolWindow id="VJ Forms"
+                    anchor="left"
+                    secondary="true"
+                    factoryClass="com.visualjava.projectview.VisualJavaProjectViewFactory"/>
+        <toolWindow id="Resources"
+                    anchor="right"
+                    secondary="true"
+                    factoryClass="com.visualjava.resources.ResourceManagerToolWindowFactory"/>
+        <toolWindow id="i18n"
+                    anchor="right"
+                    secondary="true"
+                    factoryClass="com.visualjava.i18n.I18nToolWindowFactory"/>
+        <toolWindow id="A11y"
+                    anchor="right"
+                    secondary="true"
+                    factoryClass="com.visualjava.a11y.AccessibilityToolWindowFactory"/>
+        <toolWindow id="Component Help"
+                    anchor="right"
+                    secondary="true"
+                    factoryClass="com.visualjava.help.ComponentHelpToolWindowFactory"/>
+        <!-- PreviewProcessService and DesignerSessionService are auto-registered via @Service(PROJECT). -->
+    </extensions>
+
+    <actions>
+        <action id="VisualJava.NewFxmlForm"
+                class="com.visualjava.wizard.NewFxmlFileAction"
+                text="FXML Form"
+                description="Create a new Visual Java FXML form">
+            <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+        </action>
+        <action id="VisualJava.FormFromPojo"
+                class="com.visualjava.pojo.FormFromPojoAction"
+                text="FXML Form from POJO…"
+                description="Generate a form with one widget per property of the chosen class">
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="VisualJava.NewFxmlForm"/>
+        </action>
+
+        <!-- Designer toolbar mirrors — reachable via Cmd+Shift+A (Find Action). -->
+        <action id="VisualJava.WireUp"
+                class="com.visualjava.actions.WireUpRecipeAction"
+                text="Visual Java — Wire-Up Recipe…"/>
+        <action id="VisualJava.BindPojo"
+                class="com.visualjava.actions.BindPojoAction"
+                text="Visual Java — Bind POJO…"/>
+        <action id="VisualJava.MenuEditor"
+                class="com.visualjava.actions.MenuEditorAction"
+                text="Visual Java — Menu Editor…"/>
+        <action id="VisualJava.TabOrder"
+                class="com.visualjava.actions.TabOrderAction"
+                text="Visual Java — Tab Order…"/>
+        <action id="VisualJava.RunForm"
+                class="com.visualjava.actions.RunFormAction"
+                text="Visual Java — Run This Form"/>
+        <action id="VisualJava.WireAll"
+                class="com.visualjava.actions.WireAllUnwiredAction"
+                text="Visual Java — Wire All Unwired"/>
+        <action id="VisualJava.JPackage"
+                class="com.visualjava.jpackage.JPackageAction"
+                text="Visual Java — Package App (jpackage)…"/>
+        <action id="VisualJava.ExportToWeb"
+                class="com.visualjava.web.ExportToWebAction"
+                text="Visual Java — Export to Web (Thymeleaf, v2 preview)…"/>
+    </actions>
+</idea-plugin>

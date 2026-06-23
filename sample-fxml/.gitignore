@@ -1,0 +1,6 @@
+.gradle/
+build/
+.idea/*
+!.idea/runConfigurations/
+!.idea/runConfigurations/**
+*.iml
