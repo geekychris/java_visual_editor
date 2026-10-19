@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="Java Visual Editor logo" width="180">
+</p>
+
 # Visual Java
 
 [![Build plugin](https://github.com/geekychris/java_visual_editor/actions/workflows/build.yml/badge.svg)](https://github.com/geekychris/java_visual_editor/actions/workflows/build.yml)
